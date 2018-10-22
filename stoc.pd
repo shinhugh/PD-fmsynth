@@ -1,0 +1,19 @@
+#N canvas -8 -8 1280 637 12;
+#X obj 73 46 inlet~;
+#X text 23 24 signal to be translated;
+#X obj 179 75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 73 106 snapshot~;
+#X obj 73 132 outlet;
+#X obj 179 22 loadbang;
+#X msg 179 48 1, f 1;
+#X text 117 132 stream of control values \, translated from input signal
+;
+#X obj 199 75 metro 0.02267;
+#X text 199 98 44100 samples/s -> 0.0226757 ms/sample;
+#X connect 0 0 3 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 8 0 3 0;
